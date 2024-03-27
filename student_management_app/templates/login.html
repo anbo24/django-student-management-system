@@ -2,67 +2,62 @@
 {% load static %} 
 
 {% block content %}
-
-    <body class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-logo">
-    <a href="{% url 'login' %}"><b>Student </b>Management System</a>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="heading-section">
+      <h2 class="heading-font">中之学校管理软件</h2>
+    </div>
   </div>
-  <!-- /.login-logo -->
-  <div class="card">
-    <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to Student Management System</p>
-
+  <div class="row justify-content-center">
+    <div class="login-wrap py-5">
+    
+      <h3 class="text-center mb-0">欢迎</h3>
       <form action="{% url 'doLogin' %}" method="POST">
       {% csrf_token %}
-        <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email" name="email">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
+      <div
+      class="img d-flex align-items-center justify-content-center"
+     style="background-image:url('media/logo.png')"
+    ></div>
+        <div class="form-group">
+          <div class="icon d-flex align-items-center justify-content-center">
+            <span class="fa fa-user"></span>
+          </div>
+          <input
+            type="email"
+            class="form-control"
+            placeholder="电子邮件"
+            required=""
+            name="email"
+          />
+        </div>
+        <div class="form-group">
+          <div class="icon d-flex align-items-center justify-content-center">
+            <span class="fa fa-lock"></span>
+          </div>
+          <input
+            type="password"
+            class="form-control"
+            placeholder="密码"
+            required=""
+            name="password" 
+          />
+        </div>
+        <div class="form-group d-md-flex">
+          <div class="w-100 text-md-right">
+            <a href="#">忘记密码了</a>
           </div>
         </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password" name="password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-
-          <div class="col-12">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-          </div>
-
-          {% comment %} <div class="col-12 text-center">
-            <a href="{% url 'password_reset' %}">Reset Password</a>
-          </div>  {% endcomment %}
-
-          {% comment %} Display Messages {% endcomment %}
-          {% if messages %}
-          <div class="col-12">
-            {% for message in messages %}
-              {% if message.tags == "error" %}
-                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 10px;">
-                  {{ message }}
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-              {% endif %}
-            {% endfor %}
-          </div>
-          {% endif %}
-
-          <!-- /.col -->
+        <div class="form-group">
+          <button type="submit" class="btn form-control btn-primary rounded submit px-3">登录</button>
         </div>
       </form>
-
-
+      <div class="w-100 text-center mt-4 text">
+        <!-- <p class="mb-0">Don't have an account?</p> -->
+        <a href="#">注册</a>
+      </div>
+    </div>
   </div>
 </div>
-<!-- /.login-box -->
+<!--container-->
 
 {% endblock %}
