@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="{% static "jqvmap/jqvmap.min.css" %}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css'  %}">
+  <!--Custom Theme-->
+  <link rel="stylesheet" href="{% static 'dist/css/darklightmode.css' %}">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{% static "overlayScrollbars/css/OverlayScrollbars.min.css" %}">
   <!-- Daterange picker -->
@@ -28,6 +30,7 @@
   <link rel="stylesheet" href="{% static "summernote/summernote-bs4.css" %}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  
 
     {% comment %} For Custom CSS {% endcomment %}
 
@@ -51,6 +54,13 @@
       <h4 style="margin-left: 10px; margin-top: 5px;">Student Management System HOD Login</h4>
 
       <ul class="navbar-nav ml-auto">
+
+      <!--Dark/Light Mode Toggle Button-->
+      <input type="checkbox" id="darkmode-toggle"/>
+      <label for="darkmode-toggle"></label>
+
+      <div class="background"></div>
+
       
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">
